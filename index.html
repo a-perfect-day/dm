@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #demo {
+            width: 600px;
+            height: auto;
+            border: 10px solid red;
+            margin: 100px auto;
+            border-image-source: url("./images/btn_bg.png");
+            border-image-slice: 10;
+            border-image-repeat: stretch;
+            padding: 10px 40px;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        
+        #app {
+            width: 600px;
+            height: auto;
+            margin: 100px auto 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <img src="./images/btn_bg.png" width="50px" height="50px">
+        <img src="./images/app.png" width="50px" height="50px">
+        <img src="./images/TIM图片20180103172736.png" width="50px" height="50px">
+        <img src="./images/TIM图片20180103172756.png" width="50px" height="50px">
+    </div>
+    <div id="demo">
+        <img src="./images/mei.png" alt="">
+    </div>
+</body>
+<script>
+    var app = document.getElementById("app");
+    var demo = document.getElementById("demo");
+    var arr = app.children;
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].onclick = function() {
+            demo.style.borderImageSource = 'url(' + this.src + ')'
+        }
+    }
+</script>
+
+</html>
